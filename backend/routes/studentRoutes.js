@@ -1,4 +1,5 @@
 const { Router } = require('express')
+const {createStudentController} = require('../controllers/studentControllers')
 
 const studentRouter = Router()
 
@@ -12,3 +13,11 @@ studentRouter.post("/", async(req, res)=>{
         res.status(400).json({error: error.message})
     }
 })
+
+//Get all students
+//Update student by id
+//Delete student by id
+
+module.exports={
+    studentRouter
+}
