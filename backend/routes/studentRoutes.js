@@ -1,5 +1,8 @@
 const { Router } = require('express')
-const {createStudentController} = require('../controllers/studentControllers')
+const {createStudentController,
+       getAllStudentsController
+
+} = require('../controllers/studentControllers')
 
 const studentRouter = Router()
 
@@ -15,6 +18,15 @@ studentRouter.post("/", async(req, res)=>{
 })
 
 //Get all students
+studentRouter.get("/", async(req, res)=>{
+    try {
+        const students =  await getAllStudentsController()
+        res.status(200).json(students)
+
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
+})
 //Update student by id
 //Delete student by id
 
