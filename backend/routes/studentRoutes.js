@@ -1,6 +1,7 @@
 const { Router } = require('express')
 const {createStudentController,
-       getAllStudentsController
+       getAllStudentsController,
+       updateStudentByIdController
 
 } = require('../controllers/studentControllers')
 
@@ -28,6 +29,20 @@ studentRouter.get("/", async(req, res)=>{
     }
 })
 //Update student by id
+studentRouter.put("/:id", async(req, res)=>{
+    const {id} = req.params
+    const studentData = req.body
+    try {
+        const  updatedStudent = await updateStudentByIdController(id, studentData)
+        if(!updatedStudent){
+            return res.status(404).json({error: "Student not found"})
+        }
+        res.status(200).json(updatedStudent)
+
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
+})
 //Delete student by id
 
 module.exports={

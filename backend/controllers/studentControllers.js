@@ -21,8 +21,25 @@ const getAllStudentsController = async () => {
 
 }
 
+const updateStudentByIdController  = async (id, studentData) => {
+    try {
+        const student = await Student.findByPk(id)
+        if(!student) {
+            return null
+        }
+        await student.update(studentData)
+        return student
+    } catch (error) {
+        throw  new Error(error.message)
+
+    }
+
+}
+
+
 
 module.exports = {
     createStudentController,
-    getAllStudentsController
+    getAllStudentsController,
+    updateStudentByIdController
 }
