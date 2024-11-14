@@ -1,0 +1,102 @@
+/* Estilo general para la página */
+.fondo_genereral {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa; /* Fondo gris claro */
+  padding: 20px;
+}
+
+/* Estilo para el contenedor principal */
+.listContainer {
+  background-color: #fff;
+  width: 100%;
+  max-width: 1000px; /* Limita el tamaño máximo */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  text-align: center;
+}
+
+/* Título de la lista */
+.title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el botón "Volver a inicio" */
+.backButton {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.backButton:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para la tabla de usuarios */
+.userTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.userTable th,
+.userTable td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.userTable th {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+}
+
+.userTable td {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Estilo para las filas alternas */
+.userTable tr:nth-child(even) td {
+  background-color: #f1f1f1; /* Color de fondo para filas pares */
+}
+
+/* Hover sobre las filas */
+.userTable tr:hover td {
+  background-color: #e9ecef; /* Color de fondo al pasar el mouse */
+}
+
+/* Botón de eliminar */
+.deleteButton {
+  background-color: #dc3545;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
+}
+
+/* Estilo del contenedor de la tabla para evitar desbordamiento */
+.tableWrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 20px;
+}
